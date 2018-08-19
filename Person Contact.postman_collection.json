@@ -1,0 +1,734 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Person Contact",
+		"_postman_id": "103973ba-b186-d609-4099-adae9560bfbe",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET REQUEST",
+			"description": "",
+			"item": [
+				{
+					"name": "Positive Test Case",
+					"description": "",
+					"item": [
+						{
+							"name": "GET ALL Contacts",
+							"request": {
+								"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "GET Specific Contact",
+							"request": {
+								"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts/2",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Negative Test Case",
+					"description": "",
+					"item": [
+						{
+							"name": "GET NonExisting Contact",
+							"request": {
+								"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts/2",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "POST REQUEST",
+			"description": "",
+			"item": [
+				{
+					"name": "Positive Test Case",
+					"description": "",
+					"item": [
+						{
+							"name": "POST New Pankaj Contact",
+							"request": {
+								"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"Id\": 0,\n        \"FirstName\": \"Pankaj\",\n        \"LastName\": \"Desai\",\n        \"Email\": \"pd@hotmail.com\",\n        \"PhoneNumber\": \"9923416557\",\n        \"Status\": true\n    }"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "POST New Jeff Contact",
+							"request": {
+								"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"Id\": 0,\n        \"FirstName\": \"Jeff\",\n        \"LastName\": \"Henry\",\n        \"Email\": \"JH@gmail.com\",\n        \"PhoneNumber\": \"9923416666\",\n        \"Status\": true\n    }"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "POST New John Contact",
+							"request": {
+								"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"Id\": 9,\n        \"FirstName\": \"John\",\n        \"LastName\": \"Bill\",\n        \"Email\": \"johnB@gmail.com\",\n        \"PhoneNumber\": \"8923416557\",\n        \"Status\": true\n    }"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Negative Test Case",
+					"description": "",
+					"item": [
+						{
+							"name": "Business Validation",
+							"description": "",
+							"item": [
+								{
+									"name": "POST Invalid Person Name",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 0,\n        \"FirstName\": \"WrongName123\",\n        \"LastName\": \"Bob\",\n        \"Email\": \"Bob123@gmail.com\",\n        \"PhoneNumber\": \"7777777777\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "POST Invalid EmailId",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 0,\n        \"FirstName\": \"Vinay\",\n        \"LastName\": \"Shrivastav\",\n        \"Email\": \"VSgmail.com\",\n        \"PhoneNumber\": \"4444444444\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "POST Invalid Phone",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 0,\n        \"FirstName\": \"Vinay\",\n        \"LastName\": \"Shrivastav\",\n        \"Email\": \"VS123@gmail.com\",\n        \"PhoneNumber\": \"qweerty342342\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Data Integrity Validation",
+							"description": "",
+							"item": [
+								{
+									"name": "POST Duplicate Name Contact",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 0,\n\t\t\"FirstName\": \"Pankaj\",\n        \"LastName\": \"Desai\",\n        \"Email\": \"FnLn@gmail.com\",\n        \"PhoneNumber\": \"9999999999\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "POST Duplicate Email Contact",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 1,\n        \"FirstName\": \"NewUserFN\",\n        \"LastName\": \"NewUserLN\",\n        \"Email\": \"pd@hotmail.com\",\n        \"PhoneNumber\": \"8888888888\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "POST Duplicate Phone Contact",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts",
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 1,\n        \"FirstName\": \"NewUserFN\",\n        \"LastName\": \"NewUserLN\",\n        \"Email\": \"NewEmail@gmail.com\",\n        \"PhoneNumber\": \"9923416557\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "PUT REQUEST",
+			"description": "",
+			"item": [
+				{
+					"name": "Positive Test Case",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:9413/api/PersonContacts/2",
+							"request": {
+								"url": "http://localhost:9413/api/PersonContacts/2",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"Id\": 2,\n        \"FirstName\": \"Pankaj\",\n        \"LastName\": \"Desai\",\n        \"Email\": \"pd@hotmail.com\",\n        \"PhoneNumber\": \"9923416557\",\n        \"Status\": true\n    }"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Negative Test Case",
+					"description": "",
+					"item": [
+						{
+							"name": "Business Validation",
+							"description": "",
+							"item": [
+								{
+									"name": "PUT Invalid Person Name",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts/1",
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 1,\n        \"FirstName\": \"Pankaj123\",\n        \"LastName\": \"Desai\",\n        \"Email\": \"pd@hotmail.com\",\n        \"PhoneNumber\": \"9923416557\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "PUT Invalid EmailId",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts/1",
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 1,\n        \"FirstName\": \"Pankaj\",\n        \"LastName\": \"Desai\",\n        \"Email\": \"Noattheratehotmail.com\",\n        \"PhoneNumber\": \"9923416557\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "PUT Invalid Phone",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts/1",
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 1,\n        \"FirstName\": \"Pankaj\",\n        \"LastName\": \"Desai\",\n        \"Email\": \"pd@hotmail.com\",\n        \"PhoneNumber\": \"qwerty1231231\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Data Integrity Validation",
+							"description": "",
+							"item": [
+								{
+									"name": "PUT Duplicate Name Contact",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts/1",
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 1,\n        \"FirstName\": \"Jeff\",\n        \"LastName\": \"Henry\",\n        \"Email\": \"JH@gmail.com\",\n        \"PhoneNumber\": \"9923416666\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "PUT Duplicate Email Contact",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts/1",
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 1,\n        \"FirstName\": \"NewName\",\n        \"LastName\": \"Henry\",\n        \"Email\": \"JH@gmail.com\",\n        \"PhoneNumber\": \"9923416666\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "PUT Duplicate Phone Contact",
+									"request": {
+										"url": "http://{{ServerName}}:{{Port}}/api/PersonContacts/1",
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "Authorization",
+												"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"Id\": 1,\n        \"FirstName\": \"NewName\",\n        \"LastName\": \"Henry\",\n        \"Email\": \"NewEmail@gmail.com\",\n        \"PhoneNumber\": \"9923416666\",\n        \"Status\": true\n    }"
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "DELETE REQUEST",
+			"description": "",
+			"item": [
+				{
+					"name": "Positive Test Case",
+					"description": "",
+					"item": [
+						{
+							"name": "DEL Existing Contact",
+							"request": {
+								"url": "http://localhost:9413/api/PersonContacts/3",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Negative Test Case",
+					"description": "",
+					"item": [
+						{
+							"name": "DEL Non-Existing Contact",
+							"request": {
+								"url": "http://localhost:9413/api/PersonContacts/8",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic dGVzdDp0ZXN0QDEyMw==",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}

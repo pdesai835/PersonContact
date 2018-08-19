@@ -60,3 +60,4 @@ E:\Personal\Study\Evolent_Project\ContactManagemet\ContactAPI\bin\Microsoft.Owin
 E:\Personal\Study\Evolent_Project\ContactManagemet\ContactAPI\bin\System.Web.Http.Owin.xml
 E:\Personal\Study\Evolent_Project\ContactManagemet\ContactAPI\obj\Release\ContactAPI.dll
 E:\Personal\Study\Evolent_Project\ContactManagemet\ContactAPI\obj\Release\ContactAPI.pdb
+E:\Personal\Study\Evolent_Project\ContactManagemet\ContactAPI\obj\Release\ContactAPI.csprojResolveAssemblyReference.cache

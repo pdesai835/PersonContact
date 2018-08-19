@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
@@ -19,14 +20,18 @@ namespace ContactAPI.CustomFilters
 
             if (actionExecutedContext.Exception is System.Exception)
             {
+                string responseMsg;
+                if(actionExecutedContext.Exception is DbUpdateException)
+                    responseMsg = "Database Server error occured. Please contact administrator.";
+                else
                 //The Response Message Set by the Action During Ececution
-                var res = actionExecutedContext.Exception.Message;
+                    responseMsg = "Internal Server error occured. Please contact administrator.";
 
                 //Define the Response Message
                 HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
                 {
-                    Content = new StringContent(res),
-                    ReasonPhrase = res
+                    Content = new StringContent(responseMsg),
+                    ReasonPhrase = actionExecutedContext.Exception.Message
                 };
 
 
